@@ -1,0 +1,392 @@
+BACKEND
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brew Bliss – A premium coffee shop where every cup tells a story. Explore our hot, cold, and specialty coffee menu.">
+  <title>Brew Bliss | Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">☕ Brew Bliss</a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#auth">Login / Signup</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="cart-icon" aria-label="Open Cart">
+          <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          <span id="cart-badge">0</span>
+        </button>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="hamburger" class="hamburger" aria-label="Open navigation menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome To Brew Bliss</h1>
+      <p>Where every cup tells a story</p>
+      <a href="#menu" class="cta-btn">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="images/about.jpg" alt="A barista carefully pouring coffee" loading="lazy">
+      </div>
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>At Brew Bliss, we believe that every cup of coffee tells a story. From the carefully selected beans sourced
+          from sustainable farms around the globe to the precise roasting process, our passion is evident in every sip.
+        </p>
+        <p>Founded in 2010, our mission has always been to create a welcoming space where coffee lovers can gather,
+          connect, and enjoy the finest handcrafted beverages.</p>
+        <p>Whether you're looking for a quick morning pick-me-up or a relaxing afternoon retreat, our dedicated baristas
+          are here to ensure your experience is nothing short of blissful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MENU SECTION
+  ============================================================ -->
+  <section id="menu" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Menu</h2>
+
+      <div class="menu-controls">
+        <label class="search-box" for="menu-search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="menu-search" placeholder="Search for coffee..." aria-label="Search for coffee">
+        </label>
+        <div class="category-filters" role="group" aria-label="Filter menu by category">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="hot">Hot</button>
+          <button class="filter-btn" type="button" data-filter="cold">Cold</button>
+          <button class="filter-btn" type="button" data-filter="specialty">Specialty</button>
+        </div>
+      </div>
+
+      <!-- Hot Coffees -->
+      <div class="menu-category" data-category="hot">
+        <h3 class="category-title">Hot Coffees</h3>
+        <div class="menu-grid">
+
+          <div class="coffee-card" data-name="espresso">
+            <div class="card-img" style="background-image: url('images/espresso.jpg')"></div>
+            <div class="card-content">
+              <h3>Espresso</h3>
+              <p class="price">$3.00</p>
+              <button class="add-to-cart" data-id="1" data-name="Espresso" data-price="3.00">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="coffee-card" data-name="cappuccino">
+            <div class="card-img" style="background-image: url('images/cappuccino.jpg')"></div>
+            <div class="card-content">
+              <h3>Cappuccino</h3>
+              <p class="price">$4.50</p>
+              <button class="add-to-cart" data-id="2" data-name="Cappuccino" data-price="4.50">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="coffee-card" data-name="latte">
+            <div class="card-img" style="background-image: url('images/latte.jpg')"></div>
+            <div class="card-content">
+              <h3>Café Latte</h3>
+              <p class="price">$4.50</p>
+              <button class="add-to-cart" data-id="3" data-name="Café Latte" data-price="4.50">Add to Cart</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cold Coffees -->
+      <div class="menu-category" data-category="cold">
+        <h3 class="category-title">Cold Coffees</h3>
+        <div class="menu-grid">
+
+          <div class="coffee-card" data-name="iced coffee">
+            <div class="card-img" style="background-image: url('images/iced-coffee.jpg')"></div>
+            <div class="card-content">
+              <h3>Iced Coffee</h3>
+              <p class="price">$3.50</p>
+              <button class="add-to-cart" data-id="4" data-name="Iced Coffee" data-price="3.50">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="coffee-card" data-name="cold brew">
+            <div class="card-img" style="background-image: url('images/cold Brew coffee.jpg')"></div>
+            <div class="card-content">
+              <h3>Cold Brew</h3>
+              <p class="price">$4.75</p>
+              <button class="add-to-cart" data-id="5" data-name="Cold Brew" data-price="4.75">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="coffee-card" data-name="iced caramel macchiato">
+            <div class="card-img" style="background-image: url('images/Iced Caramel Macchiat.jpg')"></div>
+            <div class="card-content">
+              <h3>Iced Caramel Macchiato</h3>
+              <p class="price">$5.25</p>
+              <button class="add-to-cart" data-id="6" data-name="Iced Caramel Macchiato" data-price="5.25">Add to Cart</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Specialty Coffees -->
+      <div class="menu-category" data-category="specialty">
+        <h3 class="category-title">Specialty Coffees</h3>
+        <div class="menu-grid">
+
+          <div class="coffee-card" data-name="mocha">
+            <div class="card-img" style="background-image: url('images/Mocha coffee.jpg')"></div>
+            <div class="card-content">
+              <h3>Mocha</h3>
+              <p class="price">$5.00</p>
+              <button class="add-to-cart" data-id="7" data-name="Mocha" data-price="5.00">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="coffee-card" data-name="affogato">
+            <div class="card-img" style="background-image: url('images/affogato coffee.jpg')"></div>
+            <div class="card-content">
+              <h3>Affogato</h3>
+              <p class="price">$5.50</p>
+              <button class="add-to-cart" data-id="8" data-name="Affogato" data-price="5.50">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="coffee-card" data-name="matcha latte">
+            <div class="card-img" style="background-image: url('images/Matcha coffee.jpg')"></div>
+            <div class="card-content">
+              <h3>Matcha Latte</h3>
+              <p class="price">$5.00</p>
+              <button class="add-to-cart" data-id="9" data-name="Matcha Latte" data-price="5.00">Add to Cart</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+  ============================================================ -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+
+      <div class="carousel-container">
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="testimonial-slide active">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"The best coffee I've ever had. Period. The atmosphere is lovely too."</p>
+            <p class="customer">- Sarah J.</p>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"I come here every morning. Their Cold Brew gets me through the day!"</p>
+            <p class="customer">- Michael T.</p>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
+            <p class="quote">"Great pastries and fantastic matcha lattes. Highly recommend."</p>
+            <p class="customer">- Emily R.</p>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"A hidden gem. The staff is friendly and the espresso is always perfectly pulled."</p>
+            <p class="customer">- David L.</p>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"Such a cozy place to work. Free WiFi and amazing Affogato."</p>
+            <p class="customer">- Jessica W.</p>
+          </div>
+
+        </div>
+
+        <button class="carousel-btn prev" id="prev-btn" aria-label="Previous testimonial">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn next" id="next-btn" aria-label="Next testimonial">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-wrapper">
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" aria-label="Your name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your email address" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" aria-label="Your message" required></textarea>
+          </div>
+          <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOGIN / SIGNUP SECTION
+  ============================================================ -->
+  <section id="auth" class="section auth-section">
+    <div class="container">
+      <div class="auth-wrapper">
+        <h2 id="auth-title" class="section-title">Welcome Back</h2>
+        <p id="auth-intro" class="auth-intro">Sign in to manage your Brew Bliss orders.</p>
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Your Password" minlength="6" required>
+          </div>
+          <button type="submit" class="cta-btn">Login</button>
+          <p id="login-status" class="auth-status" role="status" aria-live="polite"></p>
+          <p class="auth-link">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+        </form>
+
+        <form id="signup-form" hidden novalidate>
+          <div class="form-group">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" placeholder="At least 6 characters" minlength="6" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input type="password" id="signup-confirm-password" name="confirmPassword" placeholder="Repeat your password" minlength="6" required>
+          </div>
+          <button type="submit" class="cta-btn">Signup</button>
+          <p id="signup-status" class="auth-status" role="status" aria-live="polite"></p>
+          <p class="auth-link">Already have an account? <a href="#" id="show-login">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>☕ Brew Bliss</h3>
+        <p>Experience True Coffee Bliss.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col social-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2024 Brew Bliss. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CART SIDEBAR
+  ============================================================ -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart" aria-label="Close Cart"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Items injected via JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="cta-btn checkout-btn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       TOAST NOTIFICATION
+  ============================================================ -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Message sent successfully!</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
