@@ -1,0 +1,53 @@
+# ☕ Brew Bliss
+
+A coffee shop website built as a college project, featuring a clean, responsive front-end and a Node.js + MongoDB backend.
+
+## 🌟 Features
+
+- **Home** – Hero section introducing the brand
+- **About** – "Our Story" section
+- **Menu** – Hot, Cold, and Specialty drink categories with search and filter functionality
+- **Testimonials** – Customer reviews section
+- **Contact** – Contact form/details section
+
+## 🛠️ Tech Stack
+
+**Frontend:** HTML, CSS, JavaScript
+**Backend:** Node.js
+**Database:** MongoDB
+
+## 📂 Project Structure
+
+```
+coffee-Brew-bliss/
+├── backend/       # Node.js + MongoDB server
+├── frontend/      # HTML, CSS, JS client
+├── .vscode/       # Editor config
+└── .gitignore
+```
+
+## 🚀 Getting Started
+
+1. Clone the repository
+   ```
+   git clone https://github.com/Karantoke/coffee-Brew-bliss.git
+   ```
+2. Install backend dependencies
+   ```
+   cd backend
+   npm install
+   ```
+3. Start the server
+   ```
+   npm start
+   ```
+4. Open the frontend `index.html` in your browser
+
+## 📌 Status
+
+This is a self-directed college project built for learning full-stack web development.
+
+## 👤 Author
+
+**Karan Sandip Toke**
+[GitHub](https://github.com/Karantoke)
